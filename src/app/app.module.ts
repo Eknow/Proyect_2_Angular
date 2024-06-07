@@ -21,15 +21,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
 import { MenubarComponent } from './Components/menubar/menubar.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductFormComponent } from './Components/product-form/product-form.component';
 
 @NgModule({
-  declarations: [AppComponent, MenubarComponent, ProductListComponent, ProductFormComponent],
+  declarations: [
+    AppComponent,
+    MenubarComponent,
+    ProductListComponent,
+    ProductFormComponent,
+  ],
   imports: [
     BrowserModule,
+    MatDialogTitle,
     AppRoutingModule,
     MatGridListModule,
     MatToolbarModule,
