@@ -4,6 +4,7 @@ import { ProductsService } from '../../servicios/products.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductFormComponent } from '../product-form/product-form.component';
+import { ConfirmacionComponent } from '../Modal/confirmacion/confirmacion.component';
 
 @Component({
   selector: 'app-product-list',
@@ -44,9 +45,9 @@ export class ProductListComponent implements OnInit {
       data: null,
     });
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log('the dialog is closed');
+      console.log('The dialog is closed');
       if (result) {
-        this.productListMethod;
+        this.productListMethod();
       }
     });
   }
@@ -56,9 +57,22 @@ export class ProductListComponent implements OnInit {
       data: element,
     });
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log('the dialog is closed');
+      console.log('The dialog is closed');
       if (result) {
-        this.productListMethod;
+        this.productListMethod();
+      }
+    });
+  }
+
+  ElimDialog(element: Product): void {
+    const dialogRef = this.dialog.open(ConfirmacionComponent, {
+      data: element,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('Elemento eliminado', element);
+      } else {
+        console.log('Acción cancelada');
       }
     });
   }

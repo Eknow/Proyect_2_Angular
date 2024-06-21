@@ -25,6 +25,10 @@ import { MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
 import { MenubarComponent } from './Components/menubar/menubar.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductFormComponent } from './Components/product-form/product-form.component';
+import { ConfirmacionComponent } from './Components/Modal/confirmacion/confirmacion.component';
+import { ProductsCardListComponent } from './Components/products-card-list/products-card-list.component';
+import { UserManagementComponent } from './Components/user-management/user-management.component';
+import { UserDialogComponent } from './Components/user-dialog/user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,10 @@ import { ProductFormComponent } from './Components/product-form/product-form.com
     MenubarComponent,
     ProductListComponent,
     ProductFormComponent,
+    ConfirmacionComponent,
+    ProductsCardListComponent,
+    UserManagementComponent,
+    UserDialogComponent,
   ],
   imports: [
     BrowserModule,
