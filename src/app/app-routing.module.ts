@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ProductListComponent } from './Components/product-list/product-list.component';
-import { ProductFormComponent } from './Components/product-form/product-form.component';
-import { ProductsCardListComponent } from './Components/products-card-list/products-card-list.component';
-import { UserManagementComponent } from './Components/user-management/user-management.component';
+import { ProductsListComponent } from './components/products/products-list/products-list.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { SalesWindowComponent } from './components/sales/sales-window/sales-window.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'ProductsListComponent', component: ProductListComponent },
-  { path: 'Product-Form', component: ProductFormComponent },
-  { path: 'products-card-list', component: ProductsCardListComponent }, // Nueva ruta
-  { path: 'user-management', component: UserManagementComponent }, // Nueva ruta para UserManagement
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'ProductsListComponent', component: ProductsListComponent },
+  { path: 'UserListComponent', component: UserListComponent },
+  { path: 'SalesWindowComponent', component: SalesWindowComponent },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({

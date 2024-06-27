@@ -1,8 +1,3 @@
-import { NgModule } from '@angular/core';
-import {
-  BrowserModule,
-  provideClientHydration,
-} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,29 +16,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
-import { MenubarComponent } from './Components/menubar/menubar.component';
-import { ProductListComponent } from './Components/product-list/product-list.component';
-import { ProductFormComponent } from './Components/product-form/product-form.component';
-import { ConfirmacionComponent } from './Components/Modal/confirmacion/confirmacion.component';
-import { ProductsCardListComponent } from './Components/products-card-list/products-card-list.component';
-import { UserManagementComponent } from './Components/user-management/user-management.component';
-import { UserDialogComponent } from './Components/user-dialog/user-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { MenubarComponent } from './components/menubar/menubar.component';
+import { ProductsListComponent } from './components/products/products-list/products-list.component';
+import { NgModule } from '@angular/core';
+import { ProductFormComponent } from './components/products/product-form/product-form.component';
+import { ConfirmationComponentComponent } from './components/confirmation-component/confirmation-component.component';
+import { UsersComponent } from './users/users.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { LoginComponent } from './components/login/login/login.component';
+import { SalesWindowComponent } from './components/sales/sales-window/sales-window.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenubarComponent,
-    ProductListComponent,
-    ProductFormComponent,
-    ConfirmacionComponent,
-    ProductsCardListComponent,
-    UserManagementComponent,
-    UserDialogComponent,
-  ],
+  declarations: [AppComponent, MenubarComponent, ProductsListComponent, ProductFormComponent, ConfirmationComponentComponent, UsersComponent, UserListComponent, UserFormComponent, LoginComponent, SalesWindowComponent],
   imports: [
     BrowserModule,
-    MatDialogTitle,
     AppRoutingModule,
     MatGridListModule,
     MatToolbarModule,
@@ -61,8 +52,10 @@ import { UserDialogComponent } from './Components/user-dialog/user-dialog.compon
     MatTableModule,
     MatDialogModule,
     ReactiveFormsModule,
+    MatOptionModule,
+    MatSelectModule,
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {}
