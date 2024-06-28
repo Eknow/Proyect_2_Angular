@@ -1,1 +1,22 @@
-<p>sales-window works!</p>
+<div class="sales-window">
+  <div class="product-list">
+    <h2>Products</h2>
+    <div *ngFor="let product of products">
+      <div class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price | currency }}</p>
+        <button (click)="onAddToCart(product._id)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="cart-details">
+    <h2>Cart</h2>
+    <div *ngIf="cart.length === 0">Your cart is empty.</div>
+    <div *ngFor="let item of cart">
+      <p>{{ item.name }} - {{ item.price | currency }} x {{ item.amount }}</p>
+      <button (click)="onRemoveFromCart(item._id)">Remove</button>
+    </div>
+    <p *ngIf="cart.length > 0">Total: {{ getTotalPrice() | currency }}</p>
+  </div>
+</div>
